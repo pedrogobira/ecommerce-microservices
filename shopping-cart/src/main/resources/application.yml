@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: shopping-cart
+    description: REST API for a shopping cart
+    version: 0.0.1
+
+  config:
+    import: configserver:http://localhost:8888

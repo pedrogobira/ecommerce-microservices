@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: product-catalog
+    description: REST API for a product catalog
+    version: 0.0.1
+
+  config:
+    import: configserver:http://localhost:8888
