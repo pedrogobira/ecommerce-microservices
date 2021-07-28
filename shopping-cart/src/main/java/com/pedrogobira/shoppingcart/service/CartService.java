@@ -23,10 +23,12 @@ public class CartService {
         return repository.save(cart);
     }
 
+    @Transactional(readOnly = true)
     public Cart findById(Long id) {
         return repository.findById(id).orElseThrow(NoSuchElementException::new);
     }
 
+    @Transactional
     public void clear(Long id) {
         repository.findById(id).ifPresent(repository::delete);
     }

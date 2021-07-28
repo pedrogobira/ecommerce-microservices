@@ -6,11 +6,10 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @RedisHash("cart")
 public class Cart {
     @Id
@@ -19,5 +18,6 @@ public class Cart {
 
     public Cart(Long id) {
         this.id = id;
+        this.setItems(new ArrayList<>());
     }
 }
